@@ -1,0 +1,135 @@
+{
+  "create_actionable_tasks_from_text": {
+    "Description": "Given a text, extracts actionable insights, and creates tasks for them, which are kind of a work item.",
+    "ArgumentName": {
+      "text": {
+        "Description": "The text from which the actionable insights need to be created.",
+        "ArgumentType": "string"
+      }
+    }
+  },
+  "get_similar_work_items": {
+    "Description": "Returns a list of work items that are similar to the given work item",
+    "ArgumentName": {
+      "work_id": {
+        "Description": "The ID of the work item for which you want to find similar items",
+        "ArgumentType": "string"
+      }
+    }
+  },
+  "get_sprint_id": {
+    "Description": "Returns the ID of the current sprint",
+    "ArgumentName": {
+      "_": {
+        "Description":"_",
+        "ArgumentType":"_"
+      }
+    }
+  },
+  "prioritize_objects": {
+    "Description": "Returns a list of objects sorted by priority. The logic of what constitutes priority for a given object is an internal implementation detail.",
+    "ArgumentName": {
+      "objects": {
+        "Description": "A list of objects to be prioritized",
+        "ArgumentType": "array of objects"
+      }
+    }
+  },
+  "search_object_by_name": {
+    "Description": "Given a search string, returns the id of a matching object in the system of record. If multiple matches are found, it returns the one where the confidence is highest.",
+    "ArgumentName": {
+      "query": {
+        "Description": "The search string, could be for example customer\u2019s name, part name, user name.",
+        "ArgumentType": "string"
+      }
+    }
+  },
+  "summarize_objects": {
+    "Description": "Summarizes a list of objects. The logic of how to summarize a particular object type is an internal\nimplementation\ndetail.",
+    "ArgumentName": {
+      "objects": {
+        "Description": "List of objects to summarize",
+        "ArgumentType": "array of objects"
+      }
+    }
+  },
+  "who_am_i": {
+    "Description": "Returns the ID of the current user",
+    "ArgumentName": {
+      "_": {
+        "Description":"_",
+        "ArgumentType":"_"
+      }
+    }
+  },
+  "works_list": {
+    "Description": "Returns a list of work items matching the request",
+    "ArgumentName": {
+      "applies_to_part": {
+        "Description": "Filters for work belonging to any of the provided parts",
+        "ArgumentType": "array of strings"
+      },
+      "created_by": {
+        "Description": "Filters for work created by any of these users",
+        "ArgumentType": "array of strings"
+      },
+      "issue.priority": {
+        "Description": "Filters for issues with any of the provided priorities. Allowed values: p0, p1, p2,  p3",
+        "ArgumentType": "array of strings"
+      },
+      "issue.rev_orgs": {
+        "Description": "Filters for issues with any of the provided Rev organizations",
+        "ArgumentType": "array of strings"
+      },
+      "limit": {
+        "Description": "The maximum number of works to return. The default is '50'",
+        "ArgumentType": "integer (int32)"
+      },
+      "owned_by": {
+        "Description": "Filters for work owned by any of these users",
+        "ArgumentType": "array of strings"
+      },
+      "stage.name": {
+        "Description": "Filters for records in the provided stage(s) by name",
+        "ArgumentType": "array of strings"
+      },
+      "ticket.needs_response": {
+        "Description": "Filters for tickets that need a response",
+        "ArgumentType": "boolean"
+      },
+      "ticket.rev_org": {
+        "Description": "Filters for tickets associated with any of the provided Rev organizations",
+        "ArgumentType": "array of strings"
+      },
+      "ticket.severity": {
+        "Description": "Filters for tickets with any of the provided severities. Allowed",
+        "ArgumentType": "array of strings"
+      },
+      "_": {
+        "Description": "values: blocker, high, low, medium",
+        "ArgumentType":"_"
+      },
+      "ticket.source_channel": {
+        "Description": "Filters for tickets with any of the provided source channels",
+        "ArgumentType": "array of strings"
+      },
+      "type": {
+        "Description": "Filters for work of the provided types. Allowed values: issue, ticket, task",
+        "ArgumentType": "array of strings"
+      }
+    }
+  },
+  "add_work_items_to_sprint": {
+    "Description": "Adds the given work items to the sprint",
+    "ArgumentName": {
+      "work_ids": {
+        "Description": "A list of work item IDs to be added to the sprint.",
+        "ArgumentType": "array of strings"
+      },
+      "sprint_id": {
+        "Description": "The ID of the sprint to which the work items should be added",
+        "ArgumentType": "str"
+      }
+    }
+  }
+}
